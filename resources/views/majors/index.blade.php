@@ -39,6 +39,7 @@
                                     <tr>
                                         <td>{{ $item->name }}</td>
                                         <td>
+                                            <a href="{{ url('/major-module/' . $item->id) }}" title="Majors Module"><button class="btn btn-warning btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modules</button></a>
                                             <a href="{{ url('/majors/' . $item->id . '/edit') }}" title="Edit Major"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
                                             {!! Form::open([
                                                 'method'=>'DELETE',

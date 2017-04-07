@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Major;
+use App\Module;
 use Illuminate\Http\Request;
 use Session;
 
@@ -30,6 +31,8 @@ class MajorsController extends Controller
         }
 
         return view('majors.index', compact('majors'));
+        /*$module = Major::find(1)->modules;
+        echo $module;*/
     }
 
     /**

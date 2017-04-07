@@ -22,7 +22,8 @@ Route::resource('groups', 'Group\\GroupsController');
 Route::resource('majors', 'Major\\MajorsController');
 Route::resource('modules', 'Module\\ModulesController');
 Route::resource('students', 'Student\\StudentsController');
-Route::get('/home/{username}', 'HomeController@index');
+Route::resource('major-module', 'MajorModule\\MajorModuleController');
+//Route::get('/home/{username}', 'HomeController@index');
 
 
 Route::get('import-group','FileController@importGroup');
@@ -34,3 +35,12 @@ Route::post('import-module-into-db','FileController@importModuleIntoDB');
 Route::get('import-student','FileController@importStudent');
 Route::post('import-student-into-db','FileController@importStudentIntoDB');
 
+//Route::get('major-module/{id}','MajorModuleController@majorModules');
+Route::post('majormodule/{majorId}/{moduleId}',[
+    'as' => 'destroyModule',
+    'uses' => 'MajorModule\\MajorModuleController@customDestroy']);
+
+Route::get('majormodule/{majorId}',[
+    'as' => 'createModule',
+    'uses' => 'MajorModule\\MajorModuleController@createMajorModules']);
+//Route::get('major-module')

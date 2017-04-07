@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Major extends Model
+class MajorModule extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'majors';
+    protected $table = 'major_module';
 
     /**
     * The database primary key value.
@@ -25,11 +25,7 @@ class Major extends Model
      *
      * @var array
      */
-    protected $fillable = ['name'];
-
-    public function modules(){
-        return $this->belongsToMany(Module::class);
-    }
+    protected $fillable = ['major_id', 'module_id'];
 
     
 }
